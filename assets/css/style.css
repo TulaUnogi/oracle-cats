@@ -11,56 +11,82 @@ body {
   color: whitesmoke;
   text-transform: uppercase;
   max-width: 100vw;
-
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
+main {
+  display: flex;
+}
+
+/* div for background picture and website content */ 
 
 .background-container {
   background: url(../images/background-cat.webp);
   height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
+  max-width: 100vw;
+  min-width: 100vw;
+  min-height: 100vh;
+  max-height: 100vh;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: auto;
   overflow: hidden;
 }
 
+/* logo and headings */
+
 h1 {
   font-family: 'Inknut Antiqua', Impact, serif;
-  font-size: 4rem;
+  font-size: 4.8vw;
   font-weight: 400;
   letter-spacing: .75rem;
   display: inline-block;
   height: 4.3rem;
+  text-shadow: .3vw .2vw rgba(34, 34, 34, 0.168);
 }
 
 .logo {
-  margin: 2vh 0 0 10vw;
+  margin: 2vh 0vw 0vh 10vw;
 }
 
 .logo-o { 
-  width: 2.5rem;  
+  width: 3.3vw;  
   margin-right: .75rem;
   padding: .1rem;
-  border: 7px solid whitesmoke;
+  border: .7vw solid whitesmoke;
   border-radius: 50%;
   overflow: hidden;
   clear: both;
+  text-shadow: .3vw .2vw rgba(34, 34, 34, 0.168);
 }
 
 .logo h2 {
-  font-size: 1.3rem;
+  font-size: 1.5vw;
   font-weight: 300;
   letter-spacing: .3rem;
+  text-shadow: .3vw .2vw rgba(34, 34, 34, 0.168);
 }
 
+/* base div for JavaScript "magic" */
+
 .content-box {
-  margin: 10vh 0 20vh 8vw;
+  margin: 10vh 0vw 3vh 8vw;
   background-color: rgba(0, 0, 0, 0.5);
-  display: inline-block;
   width: fit-content;
-  height: fit-content;
+  max-height: 40vh;
   padding: 4rem;
   border-radius: 5%;
-  font-size: 1rem;
+  font-size: 1vw;
+  text-shadow: .3vw .2vw rgba(34, 34, 34, 0.168);
+  top: 100vh;
 }
 
 .content-box p {
@@ -88,4 +114,33 @@ button {
   border-radius: 15%;
   background-color: rgba(75, 201, 255, 0.099);
   padding: 1em;
+}
+
+/* sticky footer */
+
+footer {
+  height: 3rem;
+  display: flex;
+  position: sticky;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto; 
+  bottom: 0;  
+  background-color: rgb(13, 16, 25);  
+  margin-top: 2vh;
+}  
+
+.footer-container p {
+  margin: 2vh auto auto 8vw;
+  font-size: xx-small;  
+}
+
+/* invisible scrollbar */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0);
 }
