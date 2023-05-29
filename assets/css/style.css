@@ -120,6 +120,13 @@ button {
   box-shadow: rgb(123, 213, 255) 1px 0 10px;
 }
 
+button:hover {
+  background-color: rgba(111, 204, 244, 0.27);
+  box-shadow: rgb(171, 228, 255) 1px 0 10px;
+  color: white;
+  text-decoration: underline;
+}
+
 /* sticky footer */
 
 footer {
