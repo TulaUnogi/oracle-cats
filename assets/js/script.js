@@ -150,3 +150,45 @@ cardsArray3[5] = {
 for(x = 0; x < cardsArray2.length; x++) {
   console.log(cardsArray2[x].src);
 }
+
+// Adds event listener to the button
+
+
+// On click function changing the content-box div's html for page 2 content
+
+// Adds event listener for page 2 button
+
+/**
+ * On click function changing the content-box div's html for page 3 content 
+ * and randomizing the content of 2 different sets of card arrays
+ */
+
+
+// Adds event listener for 2 card sets
+
+/**
+ * On click "card shuffling" function that draws 3 random cards out of the arrays from the set
+ * and changes the inner html to page 4 
+ */ 
+
+// Adds event listener for 3 cards
+
+
+// Reveals the Card Of The Day with it's description 
+
+
+// Creates an array of things to focus on
+
+// Function to randomize the areas of focus and push them in a div
+
+// Prevents drawing the card more than once a day
+
+// Adds event listener for "NEXT"
+
+// Changes the inner html to page 5
+
+// Event listeners for the 2 buttons leading to the informations about creator and other forms of divination
+
+// Displays the creator's page
+
+// Displays divination links
