@@ -151,10 +151,36 @@ for(x = 0; x < cardsArray2.length; x++) {
   console.log(cardsArray2[x].src);
 }
 
+// Gets the inner HTML of the main section div's content 
+
+let contentBox = document.getElementsByClassName("content-box");
+let newContent = contentBox.innerHTML;
+
 // Adds event listener to the button
 
+let button1 = document.getElementsByClassName("btn-start");
+button1.addEventListener(click, pageTwo);
 
 // On click function changing the content-box div's html for page 2 content
+
+function pageTwo() {
+  let newContent = `
+    <div class="magic-box">
+      <p>First of all let me introduce you to
+      how it works!</p>
+      <p>after clicking the button below two sets
+      of random cards from the deck are going to be presented to you, but your</p>
+      <p>card  of the day will still be uncovered.
+      let the spirits guide you to click the right set! After you choose the set the three</p>
+      <p>random cards will appear in front of you.
+      The one you choose is going to be your</p>
+      <p>card of the day! Remember- you can only choose it once a day!</p>
+    </div>
+    <div class="btn-start">
+      <button type="button" aria-label="show-me-the-cards">Show me the cards!!</button>
+    </div>
+  `
+}
 
 // Adds event listener for page 2 button
 
