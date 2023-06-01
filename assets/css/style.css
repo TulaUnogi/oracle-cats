@@ -89,7 +89,11 @@ h1 {
   padding: 4rem;
   border-radius: 5%;
   font-size: 0.9rem;
-  text-shadow: rgb(123, 213, 255) 1px 0 10px;;  
+  text-shadow: rgb(123, 213, 255) 1px 0 10px; 
+}
+
+.magic-box {
+  max-width: 50vw;
 }
 
 .content-box p {
@@ -174,10 +178,15 @@ footer {
   .content-box {
     background-color: rgba(0, 0, 0, 0.618);
     text-shadow: rgb(123, 213, 255) 1px 0 10px;
-    top: 15vh; 
     width: 70vw;
     padding: 2rem;
     margin-top: 5vh;
+  }
+
+  .magic-box {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .btn-start {
