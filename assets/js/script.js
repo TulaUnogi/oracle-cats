@@ -1,10 +1,13 @@
+// Here to place onclick logo link to the first page at tidy up stage 
+
+
 // Gets the inner HTML of the main section div's content 
 
 let contentBox = document.getElementById("content-box");
 
 // Adds event listener to the page 1 button
 let button1 = document.getElementById("button1");
-button1.addEventListener("click", pageTwo);
+button1.addEventListener("click", pageTwo, buildDeck);
 
 // On click function changing the content-box div's html for page 2 content
 
@@ -28,169 +31,64 @@ function pageTwo(event) {
   `;
 
   let button2 = document.getElementById("button2");
-  button2.addEventListener("click", pageThree); 
+  button2.addEventListener("click", pageThree, setRandomize); 
 }
 
-// Creates the first card set
-let cardsArray1 = [];
+// New approach to build a deck of cards
 
-cardsArray1[0] = {
-  image01: new Image(),
-  src: "assets/images/advice.jpg",
-  imageCaption: "Listen closely to your friends and colleagues today. You may get a very helpful advice!"
-};
+let deck = [];
 
-cardsArray1[1] = {
-  image02: new Image(),
-  src: "assets/images/angry.jpg",
-  imageCaption: "You may feel quite angry today. No matter what caused you feel this way don't let it ruin your day!"
-};
+function buildDeck() {
 
-cardsArray1[2] = {
-  image03: new Image(),
-  src: "assets/images/annoyed.jpg",
-  imageCaption: "Even a little things may get on your nerves today. Take a deep breaths and try not to overreact."
-};
+  let pictures = [
+    assets/images/advice.jpg, assets/images/angry.jpg, assets/images/annoyed.jpg, assets/images/anxiety.jpg, 
+    assets/images/attack-chance.jpg, assets/images/attitude.jpg, assets/images/bad-day.jpg, assets/images/bizarre-adventure.jpg,
+    assets/images/caffeine.jpg, assets/images/calm.jpg, assets/images/doctor.jpg, assets/images/drama-time.jpg, assets/images/foodie.jpg,
+    assets/images/fragile.jpg, assets/images/friend-hangout.jpg, assets/images/fully-charged.jpg, assets/images/guests-over.jpg,
+    assets/images/job-opportunity.jpg, assets/images/lazy-cosy.jpg, assets/images/love-messenger.jpg, assets/images/nice.jpg,
+  ];
 
-cardsArray1[3] = {
-  image04: new Image(),
-  src: "assets/images/anxiety.jpg",
-  imageCaption: "Today your anxiety will try to take control over you. Don't let it win!"
-};
+  let descriptions = [
+    "Listen closely to your friends and colleagues today. You may get a very helpful advice!", 
+    "You may feel quite angry today. No matter what caused you feel this way don't let it ruin your day!", 
+    "Even a little things may get on your nerves today. Take a deep breaths and try not to overreact.",
+    "Today your anxiety will try to take control over you. Don't let it win!", "Stay focused on your surroundings. Some unexpected situations may arrise!",
+    "Today you should try to take responsibility for your emotions. Remember, that your attitude is created by your thoughts, and you CAN choose your thoughts.",
+    "Maybe today is not going to be the one of your best days, but remember that you don't need to spread the negative vibrations to others.",
+    "A high chance of a bizarre adventure. For example you may encounter some very fancy looking people having shady connections with Italian mafia... Or not.",
+    "Try to control your caffeine intake today. Your heart is going to thank you in the future!", "Even if things will go not exactly as planned today, you will find yourself calm and won't let anything to ruin your peace.",
+    "You should focus on your health today. Remember, that you own only one body and you need to take a good care of it!",
+    "You may try to hide it, but you surely like some spicy gossips (who doesn't?). Today is the day when your hunger for drama may be fulfilled!",
+    "Today you may expect some delicious food! No matter if it's either healthy snack, little salami or big dinner, it definitely will fill you up with happiness.",
+    "You may feel very fragile- either physically, emotionally or mentally. Take it easy today, and don't be afraid to share your feelings with your close ones!",
+    "Spend your time with your friends today. Even if it's going to be a short hangout it will brighten your day and you will have a great time together!",
+    "You are going to feel full of energy. This day is going to be full of positive vibes!", "You are going to be busy with guests today. If you didn't expect any- now you know that you may be surprised by unanounced visit!",
+    "New job opportunity may arise within your area of interest! Be ready to update your CV as it may be your chance for a pay raise!",
+    "Today maybe you may not do much, but don't worry. Taking a day off from your tasks may help your brain to recover and become more productive tomorrow!",
+    "Love has many faces. Whichever of them you choose today, make sure to value and celebrate this feeling!",
+    "Having THAT outfit on surely feels good. Today you will get an extra confidence boost thanks to that."
+  ];
 
-cardsArray1[3] = {
-  image05: new Image(),
-  src: "assets/images/attack-chance.jpg",
-  imageCaption: "Stay focused on your surroundings. Some unexpected situations may arrise!"
-};
-
-cardsArray1[4] = {
-  image06: new Image(),
-  src: "assets/images/attitude.jpg",
-  imageCaption: "Today you should try to take responsibility for your emotions. Remember, that your attitude is created by your thoughts, and you CAN choose your thoughts."
-};
-
-cardsArray1[5] = {
-  image07: new Image(),
-  src: "assets/images/bad-day.jpg",
-  imageCaption: "Maybe today is not going to be the one of your best days, but remember that you don't need to spread the negative vibrations to others."
-};
+  for (var z= 0; z < pictures.length; z++) {
+    for (var d = 0; d < description.length; d++) {
+      let picture = pictures[z];
+      let description = descriptions[d];
+      deck.push({picture, description});
+    }
+  }
+  return deck;
+}
 
 // Prints the array of cards to the console
 
-for(x = 0; x < cardsArray1.length; x++) {
-  console.log(cardsArray1[x].src);
-}
-
-// Creates the second card set
-let cardsArray2 = [];
-
-cardsArray2[0] = {
-  image08: new Image(),
-  src: "assets/images/bizarre-adventure.jpg",
-  imageCaption: "A high chance of a bizarre adventure. For example you may encounter some very fancy looking people having shady connections with Italian mafia... Or not."
-};
-
-cardsArray2[1] = {
-  image09: new Image(),
-  src: "assets/images/caffeine.jpg",
-  imageCaption: "Try to control your caffeine intake today. Your heart is going to thank you in the future!"
-};
-
-cardsArray2[2] = {
-  image10: new Image(),
-  src: "assets/images/calm.jpg",
-  imageCaption: "Even if things will go not exactly as planned today, you will find yourself calm and won't let anything to ruin your peace."
-};
-
-cardsArray2[3] = {
-  image11: new Image(),
-  src: "assets/images/doctor.jpg",
-  imageCaption: "You should focus on your health today. Remember, that you own only one body and you need to take a good care of it!"
-};
-
-cardsArray2[3] = {
-  image12: new Image(),
-  src: "assets/images/drama-time.jpg",
-  imageCaption: "You may try to hide it, but you surely like some spicy gossips (who doesn't?). Today is the day when your hunger for drama may be fulfilled!"
-};
-
-cardsArray2[4] = {
-  image13: new Image(),
-  src: "assets/images/foodie.jpg",
-  imageCaption: "Today you may expect some delicious food! No matter if it's either healthy snack, little salami or big dinner, it definitely will fill you up with happiness."
-};
-
-cardsArray2[5] = {
-  image13: new Image(),
-  src: "assets/images/fragile.jpg",
-  imageCaption: "You may feel very fragile- either physically, emotionally or mentally. Take it easy today, and don't be afraid to share your feelings with your close ones!"
-};
-
-// Prints the array of cards to the console
-
-for(x = 0; x < cardsArray2.length; x++) {
-  console.log(cardsArray2[x].src);
-}
-
-// Creates the third card set
-let cardsArray3 = [];
-
-cardsArray3[0] = {
-  image14: new Image(),
-  src: "assets/images/friend-hangout.jpg",
-  imageCaption: "Spend your time with your friends today. Even if it's going to be a short hangout it will brighten your day and you will have a great time together!"
-};
-
-cardsArray3[1] = {
-  image15: new Image(),
-  src: "assets/images/fully-charged.jpg",
-  imageCaption: "You are going to feel full of energy. This day is going to be full of positive vibes!"
-};
-
-cardsArray3[2] = {
-  image16: new Image(),
-  src: "assets/images/guests-over.jpg",
-  imageCaption: "You are going to be busy with guests today. If you didn't expect any- now you know that you may be surprised by unanounced visit!"
-};
-
-cardsArray3[3] = {
-  image17: new Image(),
-  src: "assets/images/job-opportunity.jpg",
-  imageCaption: "New job opportunity may arise within your area of interest! Be ready to update your CV as it may be your chance for a pay raise!"
-};
-
-cardsArray3[3] = {
-  image18: new Image(),
-  src: "assets/images/lazy-cosy.jpg",
-  imageCaption: "Today maybe you may not do much, but don't worry. Taking a day off from your tasks may help your brain to recover and become more productive tomorrow!"
-};
-
-cardsArray3[4] = {
-  image19: new Image(),
-  src: "assets/images/love-messenger.jpg",
-  imageCaption: "Love has many faces. Whichever of them you choose today, make sure to value and celebrate this feeling!"
-};
-
-cardsArray3[5] = {
-  image20: new Image(),
-  src: "assets/images/nice.jpg",
-  imageCaption: "Having THAT outfit on surely feels good. Today you will get an extra confidence boost thanks to that."
-};
-
-// Prints the array of cards to the console
-
-for(x = 0; x < cardsArray2.length; x++) {
-  console.log(cardsArray2[x].src);
+for (x = 0; x < deck.length; x++) {
+  console.log(deck[x].description);
 }
 
 /**
- * On click functions changing the content-box div's html for page 3 content 
- * and randomizing the content of 2 different sets of card arrays
+ * Function changing the content-box div's html for page 3 content- in progress 
  */
-function setRandomize() {
-  console.log("yup");
-}
+
 
 function pageThree() {
 
@@ -202,16 +100,54 @@ function pageThree() {
       </div>
       <p class="p-break">The deck of cards has been shuffled. Here you can see two sets of cards that have been 
       selected from the deck. One of them contains your <em>Card Of The Day</em>. Select the one that draws your attention.
-    </div>`;
+    </div>
+    `;
+    
+    let set1 = document.getElementById("1st-set");
+    let set2 = document.getElementById("2nd-set");
+
+    setRandomize();
+
+    set1.addEventListener("click", pageFour)
+    set2.addEventListener("click", pageFour)
 }
 
+/**
+ * Function randomizing the content of 2 different sets of card arrays- in progress
+ */
 
-// Adds event listener for 2 card sets
+function setRandomize() {
+
+  let deckShuffle;
+  // Loops through the deck arrays - in progress
+  for (let i = 0; i = deck.length; i++) {
+    deckShuffle = Math.floor(Math.random() * (deck.length));
+    return deckShuffle;
+  }
+
+  // Pushes the results into 2 sets
+  let cardSet1 = [];
+  let cardSet2 = [];
+
+  // Throws undefined, to be fixed
+  cardSet1.push(deckShuffle);
+  cardSet2.push(deckShuffle);
+  
+  // check
+  console.log(cardSet1);
+  console.log(cardSet2);
+
+}
+
 
 /**
  * On click "card shuffling" function that draws 3 random cards out of the arrays from the set
  * and changes the inner html to page 4 
  */ 
+
+function pageFour() {
+  console.log("Here pg4 soon");
+}
 
 // Adds event listener for 3 cards
 
