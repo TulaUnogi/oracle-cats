@@ -193,7 +193,16 @@ function setRandomize() {
 }
 
 function pageThree() {
-  console.log("placeholder");
+
+  contentBox.innerHTML = `
+    <div class="magic-box">
+      <div class="cards-box">
+        <img src="assets/images/cards-set.png" class="card-backs" id="1st-set" alt="first set of cards">
+        <img src="assets/images/cards-set.png" class="card-backs"  id="2nd-set" alt="second set of cards">
+      </div>
+      <p class="p-break">The deck of cards has been shuffled. Here you can see two sets of cards that have been 
+      selected from the deck. One of them contains your <em>Card Of The Day</em>. Select the one that draws your attention.
+    </div>`;
 }
 
 

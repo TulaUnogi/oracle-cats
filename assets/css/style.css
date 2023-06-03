@@ -92,14 +92,14 @@ h1 {
   text-shadow: rgb(123, 213, 255) 1px 0 10px; 
 }
 
-.magic-box {
-  max-width: 50vw;
-}
-
 .content-box p {
   text-align: right;
   padding: .1rem;
   letter-spacing: .1rem;
+}
+
+.magic-box {
+  max-width: 50vw;
 }
 
 .p-break {
@@ -131,6 +131,23 @@ button:hover {
   text-decoration: underline;
 }
 
+.cards-box {
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.cards-box img {
+  height:36vh;
+  position: relative;
+}
+
+.card-backs:hover {
+  box-shadow: rgb(171, 228, 255) 1px 0 10px;
+}
+
 /* sticky footer */
 
 footer {
@@ -140,8 +157,7 @@ footer {
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: auto; 
-  top: 100vh;  
-  background-color: rgb(13, 16, 25);  
+  top: 100vh;   
   margin-top: 2vh;
 }  
 
@@ -205,4 +221,19 @@ footer {
     margin-right: 0vw;     
   }
 
+}
+
+@media screen and (max-width: 507px) {
+  .content-box {
+    font-size: 0.8em;  
+  }
+}
+
+@media screen and (max-width: 372px) {
+  .content-box {
+    font-size: 0.6em;  
+  }
+  .cards-box img {
+    height:30vh;
+  }
 }
