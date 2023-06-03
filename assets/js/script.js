@@ -2,13 +2,9 @@
 
 let contentBox = document.getElementById("content-box");
 
-// Adds event listener to the page 1 and 2 buttons
+// Adds event listener to the page 1 button
 let button1 = document.getElementById("button1");
 button1.addEventListener("click", pageTwo);
-if (pageTwo()) {
-let button2 = document.getElementById("button2");
-button2.addEventListener("click", pageThree); 
-}
 
 // On click function changing the content-box div's html for page 2 content
 
@@ -30,6 +26,9 @@ function pageTwo(event) {
       <button type="button" aria-label="show-me-the-cards">Show me the cards!</button>
     </div>
   `;
+
+  let button2 = document.getElementById("button2");
+  button2.addEventListener("click", pageThree); 
 }
 
 // Creates the first card set
