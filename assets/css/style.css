@@ -86,7 +86,7 @@ h1 {
   height: fit-content;
   min-height: 38vh;
   max-height: 70vh;
-  padding: 4rem;
+  padding: 3rem;
   border-radius: 5%;
   font-size: 0.9rem;
   text-shadow: rgb(123, 213, 255) 1px 0 10px; 
@@ -140,8 +140,10 @@ button:hover {
 }
 
 .cards-box img {
-  height:36vh;
+  height: 32vh;
   position: relative;
+  margin: 3%;
+  object-fit: contain;
 }
 
 .card-backs:hover {
@@ -221,6 +223,12 @@ footer {
     margin-right: 0vw;     
   }
 
+}
+
+@media screen and (max-width: 590px) {
+  .card-backs {
+    max-width: 30%;
+  }
 }
 
 @media screen and (max-width: 507px) {

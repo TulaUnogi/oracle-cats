@@ -192,9 +192,13 @@ function pageThree() {
 
     setRandomize();
 
-    set1.addEventListener("click", pageFour, option1);
-    set2.addEventListener("click", pageFour, option2);
+    set1.addEventListener("click", option1);
+    set2.addEventListener("click", option2);
 };
+
+// Creates 2 sets of cards to populate
+let cardSet1 = [];
+let cardSet2 = [];
 
 /**
  * Function randomizing the content of 2 different sets of card arrays.
@@ -219,9 +223,6 @@ function setRandomize() {
   
   // Now finally split the deck 50/50
 
-  let cardSet1 = [];
-  let cardSet2 = [];
-
   let halfDeck = Math.ceil(deck.length /2);
 
   cardSet1 = deck.slice(0, halfDeck); // Gets the first half
@@ -239,6 +240,7 @@ function setRandomize() {
 
 function option1() {
   console.log(cardSet1);
+  pageFour();
 };
 
 /**
@@ -246,7 +248,8 @@ function option1() {
  */
   
 function option2() {
-  console.log("placeholder");
+  console.log(cardSet2);
+  pageFour();
 };
 
 /**
@@ -261,7 +264,7 @@ function pageFour() {
       <div class="cards-box">
         <img src="assets/images/cards-back.jpg" class="card-backs" id="1st-card" alt="first card">
         <img src="assets/images/cards-back.jpg" class="card-backs"  id="2nd-card" alt="second card">
-        <img src="assets/images/cards-back.jpg" class="card-backs"  id="2nd-card" alt="second card">
+        <img src="assets/images/cards-back.jpg" class="card-backs"  id="3rd-card" alt="third card">
       </div>
       <p class="p-break"> Now that you chose the set, we have drawn three cards random from it.
       Now it's time for you to select your <em>Card Of The Day</em>. Simply click on it to see your card revealed!</p>
@@ -279,18 +282,24 @@ function pageFour() {
   card3.addEventListener("click", reveal3);
 }
 
-// Reveals the Card Of The Day with it's description - in progress 
+// Reveals the Card Of The Day with it's description - in progress (base structure)
 
 function reveal1() {
-  console.log("1");
+  console.log("Here's card 1 div");
+  console.log("Here's randomized focus area");
+  console.log("Here's NEXT button");
 }
 
 function reveal2() {
-  console.log("2");
+  console.log("Here's card 2 div");
+  console.log("Here's randomized focus area");
+  console.log("Here's NEXT button");
 }
 
 function reveal3() {
-  console.log("3");
+  console.log("Here's card 1 div");
+  console.log("Here's randomized focus area");
+  console.log("Here's NEXT button");
 }
 
 // Creates an array of things to focus on
