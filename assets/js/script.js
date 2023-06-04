@@ -170,7 +170,7 @@ for(x = 0; x < deck.length; x++) {
 };
 
 /**
- * Function changing the content-box div's html for page 3 content- in progress 
+ * Function changing the content-box div's html for page 3 content
  */
 
 
@@ -234,30 +234,49 @@ function setRandomize() {
 
 };
 
+// Global variable to determine if option one was chosen
+let optionOne;
+
 /**
- * Function returns the value of 1st card set after user clicks on left card set
+ * Function returns the value 'true' of 1st card set after user clicks on left card set
+ * for allowing to load page 4 with 1st set of cards in next function 
  */
 
 function option1() {
-  console.log(cardSet1);
+  optionOne = true;
   pageFour();
 };
 
 /**
- * Function returns the value of 2nd card set after user clicks on right card set
+ * Function returns the value 'false' for 1st card set after user clicks on right card set
+ * for allowing to load page 4 with 2nd set of cards in next function 
  */
   
 function option2() {
-  console.log(cardSet2);
+  optionOne = false;
   pageFour();
 };
 
 /**
  * On click "card shuffling" function that draws 3 random cards out of the arrays from the set
- * and changes the inner html to page 4 - not working yet, throws error to be fixed
+ * and changes the inner html to page 4
  */ 
 
 function pageFour() {
+
+  // Deals 3 cards of the chosen set
+
+  if (optionOne = true) {
+    const dayCard1 = cardSet1[0];
+    const dayCard2 = cardSet1[1];
+    const dayCard3 = cardSet1[2];
+  } else {
+    const dayCard1 = cardSet2[0];
+    const dayCard2 = cardSet2[1];
+    const dayCard3 = cardSet2[2];
+  };
+
+  // Changes div's HTML to page 4
 
   contentBox.innerHTML = `
     <div class="magic-box">
@@ -285,9 +304,23 @@ function pageFour() {
 // Reveals the Card Of The Day with it's description - in progress (base structure)
 
 function reveal1() {
-  console.log("Here's card 1 div");
-  console.log("Here's randomized focus area");
-  console.log("Here's NEXT button");
+
+  // Changes the div's html
+  contentBox.innerHTML = `
+    <div class="magic-box">
+      <div class="cat-card">
+        <figure id="day-card1">
+        </figure>
+      </div>
+      <p class="p-break"> Here's your <em>Card Of The Day</em>! Don't forget to come back tomorrow!</p> 
+      <p>If you would like to find out more about the other forms of divination or creator's notes, please click "NEXT"!</p>
+    </div>
+    <div class="next">NEXT</div>
+  `;
+
+  // 
+  const catCard1 = document.getElementById("day-card1");
+  catCard1.appendChild.card1;
 }
 
 function reveal2() {
