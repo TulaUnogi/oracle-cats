@@ -32,7 +32,7 @@ function pageTwo(event) {
 
   let button2 = document.getElementById("button2");
   button2.addEventListener("click", pageThree); 
-}
+};
 
 // Creates the deck
 let deck = [];
@@ -167,7 +167,7 @@ deck[20] = {
 
 for(x = 0; x < deck.length; x++) {
   console.log(deck[x].src);
-}
+};
 
 /**
  * Function changing the content-box div's html for page 3 content- in progress 
@@ -192,60 +192,106 @@ function pageThree() {
 
     setRandomize();
 
-    set1.addEventListener("click", pageFour)
-    set2.addEventListener("click", pageFour)
-}
+    set1.addEventListener("click", pageFour, option1);
+    set2.addEventListener("click", pageFour, option2);
+};
 
 /**
- * Function randomizing the content of 2 different sets of card arrays- in progress (needs FIX!!!)
+ * Function randomizing the content of 2 different sets of card arrays.
+ * First shuffle.
+ * Then split.
  */
 
 function setRandomize() {
 
-    let cardSet1 = [];
-    let cardSet2 = [];
+    // trying Fisher-Yates method
+    for (let i = deck.length -1; i > 0; i--) {
 
-    for (let i = 0; i <= deck.length; i++) {
+      let j = Math.floor(Math.random() * (i+1));
+      let k = deck[i];
 
-      let deckA = deck;
-
-      let shuffle = Math.floor(Math.random() * (deck.length));
+      deck[i] = deck[j];
+      deck[j] = k;
       
-      // three buckets shuffle method
-      let tempCard = deckA[i];
-      deckA[i] = deckA[shuffle];
-      deckA[shuffle] = tempCard;
-      
+    };
+  
+  console.log(deck); // Reshuffled, works!
+  
+  // Now finally split the deck 50/50
 
-      console.log(deckA, "after shuffle"); // reshuffled
-    
+  let cardSet1 = [];
+  let cardSet2 = [];
 
-    let shuffled1= deckA.slice(0, deck.length / 2);
-    let shuffled2 = deckA.slice(0, deck.length / 2, deck.length);
-    
-    cardSet1.push(shuffled1[i]);
-    cardSet2.push(shuffled2[i]);
+  let halfDeck = Math.ceil(deck.length /2);
 
-  };
+  cardSet1 = deck.slice(0, halfDeck); // Gets the first half
+  cardSet2 = deck.slice(halfDeck,deck.length); // Gets the second half
+
   // check
+  console.log(cardSet1, "set1");
+  console.log(cardSet2, "set2");
+
+};
+
+/**
+ * Function returns the value of 1st card set after user clicks on left card set
+ */
+
+function option1() {
   console.log(cardSet1);
-  console.log(cardSet2);
+};
+
+/**
+ * Function returns the value of 2nd card set after user clicks on right card set
+ */
+  
+function option2() {
+  console.log("placeholder");
 };
 
 /**
  * On click "card shuffling" function that draws 3 random cards out of the arrays from the set
- * and changes the inner html to page 4 
+ * and changes the inner html to page 4 - not working yet, throws error to be fixed
  */ 
 
 function pageFour() {
-  console.log("Here pg4 soon");
+
+  contentBox.innerHTML = `
+    <div class="magic-box">
+      <div class="cards-box">
+        <img src="assets/images/cards-back.jpg" class="card-backs" id="1st-card" alt="first card">
+        <img src="assets/images/cards-back.jpg" class="card-backs"  id="2nd-card" alt="second card">
+        <img src="assets/images/cards-back.jpg" class="card-backs"  id="2nd-card" alt="second card">
+      </div>
+      <p class="p-break"> Now that you chose the set, we have drawn three cards random from it.
+      Now it's time for you to select your <em>Card Of The Day</em>. Simply click on it to see your card revealed!</p>
+    </div>
+  `;
+
+  // Gets the cards ID
+  const card1 = document.getElementById("1st-card");
+  const card2 = document.getElementById("2nd-card");
+  const card3 = document.getElementById("3rd-card");
+
+  // Adds event listeners for 3 cards
+  card1.addEventListener("click", reveal1);
+  card2.addEventListener("click", reveal2);
+  card3.addEventListener("click", reveal3);
 }
 
-// Adds event listener for 3 cards
+// Reveals the Card Of The Day with it's description - in progress 
 
+function reveal1() {
+  console.log("1");
+}
 
-// Reveals the Card Of The Day with it's description 
+function reveal2() {
+  console.log("2");
+}
 
+function reveal3() {
+  console.log("3");
+}
 
 // Creates an array of things to focus on
 
