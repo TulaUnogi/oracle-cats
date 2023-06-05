@@ -93,7 +93,7 @@ h1 {
 }
 
 .content-box p {
-  text-align: right;
+  text-align: center;
   padding: .1rem;
   letter-spacing: .1rem;
 }
@@ -150,6 +150,50 @@ button:hover {
   box-shadow: rgb(171, 228, 255) 1px 0 10px;
 }
 
+.cat-card {
+  box-shadow: rgba(119, 205, 246, 0.688) 1px 0 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: center;
+  width: 35vw;
+}
+
+.cat-card img {
+  margin: 1%;
+  height: 40vh;  
+  box-shadow: rgb(171, 228, 255) 1px 0 10px;
+  object-fit: contain;
+}
+
+.cat-card div {
+  margin: auto 3%;
+  width: 15vw;
+  display: flex;
+  align-content: center;
+}
+
+.cat-card p {
+  text-align: center;
+  font-weight: 400;
+  margin: auto 1%;
+}
+
+.p-smaller {
+  font-size: 0.7rem;
+  padding: 1%;
+}
+
+.next {
+  margin: 2% auto 1% auto;
+  justify-content: center;
+  width: fit-content;
+  text-decoration: underline;
+  text-shadow: rgba(77, 196, 251, 0.815) 1px 1 10px;  
+}
+
 /* sticky footer */
 
 footer {
@@ -180,7 +224,7 @@ footer {
 
 /* media queries for smaller screens */
 
-@media screen and (max-width: 932px) {
+@media screen and (max-width: 942px) {
 
   .background-container {
     overflow-y: scroll;
@@ -220,14 +264,39 @@ footer {
     top: 100vh; 
     bottom: 0vh;
     width: 100vw;
-    margin-right: 0vw;     
+    background-image: linear-gradient(to left, rgba(255,0,0,0), rgb(1, 1, 19));      
+  }
+
+  .cat-card {
+    width: auto;
   }
 
 }
 
 @media screen and (max-width: 590px) {
+
   .card-backs {
     max-width: 30%;
+  }
+
+  .cat-card {
+   display: block;
+  }
+
+  .cat-card div {
+    width: 100%;
+  }
+  .cat-card p {
+    font-size: 0.6em;
+  }
+
+}
+
+@media screen and (max-width: 521px) {
+
+  .cat-card {
+    flex-direction: column;
+ 
   }
 }
 
@@ -237,11 +306,19 @@ footer {
   }
 }
 
-@media screen and (max-width: 372px) {
+@media screen and (max-width: 423px) {
   .content-box {
     font-size: 0.6em;  
   }
   .cards-box img {
-    height:30vh;
+    height: 30vh;
+  }
+
+  .cat-card img {
+    height: 30vh;
+  }
+
+  .cat-card > p {
+    font-size: 0.6em;
   }
 }

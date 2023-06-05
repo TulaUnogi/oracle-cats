@@ -314,10 +314,10 @@ function reveal1() {
     <div class="magic-box">
       <div class="cat-card" id="day-card1">
       </div>
-      <p class="p-break"> Here's your <em>Card Of The Day</em>! Don't forget to come back tomorrow!</p> 
-      <p>If you would like to find out more about the other forms of divination or creator's notes, please click "NEXT"!</p>
+      <p class="p-break p-smaller"> Here's your <em>Card Of The Day</em>! Don't forget to come back tomorrow!</p> 
+      <p class="p-smaller">If you would like to find out more about the other forms of divination or creator's notes, please click "NEXT"!</p>
     </div>
-    <div id="next">NEXT</div>
+    <div id="next" class="next"><p>-- NEXT --</p></div>
   `;
 
   // Adds the Card Of The Day 1 to the div- in progress
@@ -326,11 +326,13 @@ function reveal1() {
   let catCard1 = document.getElementById("day-card1");
   let description1 = document.createElement("p");
   let text1 = dayCard1.imageCaption;
+  let textBox1 = document.createElement("div");
   img1.src = dayCard1.src;
   img1.alt = dayCard1.alt;
   description1.innerText = text1;
   catCard1.appendChild(img1);
-  catCard1.appendChild(description1);
+  catCard1.appendChild(textBox1);
+  textBox1.appendChild(description1);
 
   console.log("revealing card 1");
 
@@ -346,10 +348,10 @@ function reveal2() {
     <div class="magic-box">
       <div class="cat-card" id="day-card2">
       </div>
-      <p class="p-break"> Here's your <em>Card Of The Day</em>! Don't forget to come back tomorrow!</p> 
-      <p>If you would like to find out more about the other forms of divination or creator's notes, please click "NEXT"!</p>
+      <p class="p-break p-smaller"> Here's your <em>Card Of The Day</em>! Don't forget to come back tomorrow!</p> 
+      <p class="p-smaller">If you would like to find out more about the other forms of divination or creator's notes, please click "NEXT"!</p>
     </div>
-    <div id="next">NEXT</div>
+    <div id="next" class="next"><p>-- NEXT --</p></div>
   `;
 
   // Adds the Card Of The Day 2 to the div- in progress
@@ -358,11 +360,13 @@ function reveal2() {
   let catCard2 = document.getElementById("day-card2");
   let description2 = document.createElement("p");
   let text2 = dayCard2.imageCaption;
+  let textBox2 = document.createElement("div");
   img2.src = dayCard2.src;
   img2.alt = dayCard2.alt;
   description2.innerText = text2;
   catCard2.appendChild(img2);
-  catCard2.appendChild(description2);
+  catCard2.appendChild(textBox2);
+  textBox2.appendChild(description2);
 
   console.log("revealing card 2");
 
@@ -379,10 +383,10 @@ function reveal3() {
     <div class="magic-box">
       <div class="cat-card" id="day-card3">
       </div>
-      <p class="p-break"> Here's your <em>Card Of The Day</em>! Don't forget to come back tomorrow!</p> 
-      <p>If you would like to find out more about the other forms of divination or creator's notes, please click "NEXT"!</p>
+      <p class="p-break p-smaller"> Here's your <em>Card Of The Day</em>! Don't forget to come back tomorrow!</p> 
+      <p class="p-smaller">If you would like to find out more about the other forms of divination or creator's notes, please click "NEXT"!</p>
     </div>
-    <div id="next">NEXT</div>
+    <div id="next" class="next"><p>-- NEXT --</p></div>
   `;
 
   // Adds the Card Of The Day 3 to the div- in progress
@@ -390,12 +394,14 @@ function reveal3() {
   let img3 = document.createElement("img");
   let catCard3 = document.getElementById("day-card3");
   let description3 = document.createElement("p");
+  let textBox3 = document.createElement("div");
   let text3 = dayCard3.imageCaption;
   img3.src = dayCard3.src;
   img3.alt = dayCard3.alt;
   description3.innerText = text3;
   catCard3.appendChild(img3);
-  catCard3.appendChild(description3);
+  catCard3.appendChild(textBox3);
+  textBox3.appendChild(description3);
 
   console.log("revealing card 3");
 
