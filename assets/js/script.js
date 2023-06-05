@@ -329,18 +329,18 @@ function creatorPg() {
       <div class="two">
         <div>
           <h2 class="inner-h2">Few words from the creator:</h2>
-          <p class="p-break p-smaller">Hi! I'm TulaUnogi and I had the pleasure to create this website! I come from the beautiful south 
+          <p class="p-break p-smaller">Hi! I'm TulaUnogi and I have had the pleasure of creating this website! I come from the beautiful south 
           of Poland and I live in Ireland since around 2016.</p>
           <p class="p-break p-smaller">Oracle Cats is a result of my passion to Tarot and other forms of divination like runes and 
           oracle cards (which were the main inspiration here). As I am also a crazy cat lady and I love scrolling through
-          memes, I could just not combine those three together. I believe in divination but I also believe, that the card spirits 
-          would allow us to also have some fun! :) While currently the amount of the cards in the deck is still not too big,
+          memes, I could just not combine those three together. I believe in divination but I think, that the card spirits 
+          would also allow us to have some fun! :) While currently the amount of the cards in the deck is still not too big,
           I am planning to increase it within the next few months to the full deck capacity. Keep your eyes open for the updates 
-          and my side projects!</p>
+          and my future side projects!</p>
         </div>
         <div>
           <h2 class="inner-h2">Update notes:</h2>
-          <p class="p-break p-smaller"><span class="em">5/06/2023:</span> Initial version of the website has been deployed to GitHub Pages.</p>
+          <p class="p-break p-smaller"><span class="em">6/06/2023:</span> Initial version of the website has been deployed to GitHub Pages.</p>
         </div>
       </div>
       <div class="btn-start" id="go-back">
