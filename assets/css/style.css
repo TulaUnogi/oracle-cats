@@ -102,12 +102,17 @@ h1 {
   max-width: 50vw;
 }
 
+.magic-box a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
 .p-break {
   margin-top: 1.5em;
 }
 
 .btn-start {
-  margin-top: 5em;
+  margin-top: 4em;
   display: flex;
   justify-content: center;
 }
@@ -115,7 +120,7 @@ h1 {
 button {
   color: whitesmoke;
   font-family: 'Inknut Antiqua', Impact, serif;
-  font-size: 1.2vw;
+  font-size: 0.9vw;
   font-weight: 800;
   text-transform: uppercase;
   border-radius: 15%;
@@ -182,7 +187,7 @@ button:hover {
 }
 
 .p-smaller {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   padding: 1%;
 }
 
@@ -194,10 +199,30 @@ button:hover {
   text-shadow: rgba(77, 196, 251, 0.815) 1px 1 10px;  
 }
 
+.inner-h2 {
+  margin-top: 2%;
+  padding: 2%;
+  text-align: center;
+  font-size: 1.5vw;
+  text-decoration: underline;
+}
+
+.em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.other-div {
+  padding: 2%;
+  text-align: center;
+  margin: 0 auto 4% auto;
+}
+
+
 /* sticky footer */
 
 footer {
-  height: 3rem;
+  height: 1.7rem;
   display: flex;
   position: sticky;
   flex-grow: 0;
@@ -205,10 +230,11 @@ footer {
   flex-basis: auto; 
   top: 100vh;   
   margin-top: 2vh;
+  background-image: linear-gradient(to left, rgba(255,0,0,0), rgb(1, 1, 19));  
 }  
 
 .footer-container p {
-  margin: 2vh auto auto 8vw;
+  margin-left: 8vw;
   font-size: xx-small;  
 }
 
@@ -243,6 +269,7 @@ footer {
     width: 70vw;
     padding: 2rem;
     margin-top: 5vh;
+    max-height: fit-content;
   }
 
   .magic-box {
@@ -263,8 +290,7 @@ footer {
     display: flex;
     top: 100vh; 
     bottom: 0vh;
-    width: 100vw;
-    background-image: linear-gradient(to left, rgba(255,0,0,0), rgb(1, 1, 19));      
+    width: 100vw;    
   }
 
   .cat-card {

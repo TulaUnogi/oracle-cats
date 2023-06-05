@@ -422,32 +422,102 @@ function pageFive() {
       <p>Hungry for more informations? No problem! Just click one of the options below. Left option is going to 
       show you informations about the creator and creator's notes, while right one is going to provide the links to the useful
       resources for you to do some research about other methods of divination!</p>
-      <p class="p-break"><b><em>I would like to know more about:</em><b></p>
+      <p class="p-break">
+      <em>I would like to know more about:</em>
+      </p>
       <div class="btn-start" id="button-creator">
       <button type="button" aria-label="creator">That silly creator</button>
     </div>
+
     <div class="btn-start" id="button-other">
       <button type="button" aria-label="other divination methods">Other divination methods</button>
     </div>
-      <p class="p-break">Hope that you enjoyed your experience with Oracle Cats! Please remember to come back <b>tomorrow</b>!</p>
+    <div>
+      <p class="p-break p-smaller">Hope that you enjoyed your experience with Oracle Cats! Please remember to come back tomorrow!</p>
     </div>  
   `;
 
   // Adds event listeners to buttons
   const creator = document.getElementById("button-creator");
   const otherMet = document.getElementById("button-other");
-  creator.addEventListener("click");
-  otherMet.addEventListener("click");
+  creator.addEventListener("click", creatorPg);
+  otherMet.addEventListener("click", otherMetPg);
 
 };
+
+/**
+ * Function changing div's content to creator notes
+ */
+
+function creatorPg() {
+
+  contentBox.innerHTML = `
+    <div class="magic-box">
+      <div class="two">
+        <div>
+          <h2 class="inner-h2">Few words from the creator:</h2>
+          <p class="p-break p-smaller">Hi! I'm TulaUnogi and I had the pleasure to create this website! I come from the beautiful south 
+          of Poland and I live in Ireland since around 2016.</p>
+          <p class="p-break p-smaller">Oracle Cats is a result of my passion to Tarot and other forms of divination like runes and 
+          oracle cards (which were the main inspiration here). As I am also a crazy cat lady and I love scrolling through
+          memes, I could just not combine those three together. I believe in divination but I also believe, that the card spirits 
+          would allow us to also have some fun! :) While currently the amount of the cards in the deck is still not too big,
+          I am planning to increase it within the next few months to the full deck capacity. Keep your eyes open for the updates 
+          and my side projects!</p>
+        </div>
+        <div>
+          <h2 class="inner-h2">Update notes:</h2>
+          <p class="p-break p-smaller"><span class="em">5/06/2023:</span> Initial version of the website has been deployed to GitHub Pages.</p>
+        </div>
+      </div>
+      <div class="btn-start" id="button-back">
+      <button type="button" aria-label="Go back">Go back</button>
+    </div>     
+  `;
+
+  const goBack = document.getElementById("button-back");
+  goBack.addEventListener("click", pageFive);
+  
+
+};
+
+/**
+ * Function changing div's content to other forms of divination
+ */
+
+function otherMetPg() {
+
+  contentBox.innerHTML = `
+    <div class="magic-box">
+      <div class="other-div">
+        <h2 class="inner-h2">Other froms of divination:</h2>
+        <p>The links below will redirect you to the </p>
+        <p>Click the following options to find out more about my favourite methods!</p>
+      <div>
+      <div class="next">
+        <a href="https://www.astrologyzone.com/" target="_blank">Astrology</a>
+      </div>
+      <div class="next">
+        <a href="https://medium.com/musings-with-meg/oracle-decks-what-they-are-and-how-to-use-them-c037251a7a84" target="_blank">Oracle Cards</a>
+      </div>
+      <div class="next">
+        <a href="https://www.yourtango.com/2018316703/how-to-read-cast-interpret-rune-casting-astrology-zodiac-horoscope" target="_blank">Rune Casting</a>
+      </div>
+      <div class="next"> 
+        <a href="https://www.tarot.com/tarot" target="_blank">Tarot</a>
+      </div>
+
+      <div class="btn-start" id="button-back">
+      <button type="button" aria-label="Go back">Go back</button>
+    </div>     
+  `;
+
+  const goBack = document.getElementById("button-back");
+  goBack.addEventListener("click", pageFive);
+}
 
 // Creates an array of things to focus on
 
 // Function to randomize the areas of focus and push them in a div
 
 // Prevents drawing the card more than once a day
-
-
-// Displays the creator's page
-
-// Displays divination links
