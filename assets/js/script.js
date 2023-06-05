@@ -298,14 +298,14 @@ function moreInformations() {
       <p class="p-break">
       <em>I would like to know more about:</em>
       </p>
-      <div class="btn-start" id="button-creator">
-      <button type="button" aria-label="creator">That silly creator</button>
-    </div>
-
-    <div class="btn-start" id="button-other-methods">
-      <button type="button" aria-label="other divination methods">Other divination methods</button>
-    </div>
-    <div>
+      <div class="btns-box">
+        <div class="btn-start" id="button-creator">
+          <button type="button" aria-label="creator">That silly creator</button>
+        </div>
+        <div class="btn-start" id="button-other-methods">
+          <button type="button" aria-label="other divination methods">Other divination methods</button>
+        </div>
+      </div>    
       <p class="p-break p-smaller">Hope that you enjoyed your experience with Oracle Cats! Please remember to come back tomorrow!</p>
     </div>  
   `;

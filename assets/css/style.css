@@ -32,14 +32,13 @@ main {
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
-  max-width: 100vw;
-  min-width: 100vw;
-  min-height: 100vh;
-  max-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: auto;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 /* logo and headings */
@@ -71,21 +70,25 @@ h1 {
 }
 
 .logo h2 {
-  font-size: 1.5vw;
+  font-size: 1.5rem;
   font-weight: 300;
   letter-spacing: .3rem;
   text-shadow: .3vw .2vw rgba(34, 34, 34, 0.168);
+  margin-bottom: 5vh;
 }
 
 /* base div for JavaScript "magic" */
 
 .content-box {
-  margin: 10vh 0vw 3vh 8vw;
+  margin-left: 8vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   background-color: rgba(0, 0, 0, 0.5);
+  max-width: 50vw;
   width: fit-content;
   height: fit-content;
-  min-height: 38vh;
-  max-height: 70vh;
+  min-height: 45vh;
   padding: 3rem;
   border-radius: 5%;
   font-size: 0.9rem;
@@ -99,7 +102,7 @@ h1 {
 }
 
 .magic-box {
-  max-width: 50vw;
+  align-content: center;
 }
 
 .magic-box a {
@@ -111,16 +114,24 @@ h1 {
   margin-top: 1.5em;
 }
 
+/* Buttons */
+
 .btn-start {
   margin-top: 4em;
+  margin-bottom: 2em;
   display: flex;
   justify-content: center;
+}
+
+.btns-box {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2%;
 }
 
 button {
   color: whitesmoke;
   font-family: 'Inknut Antiqua', Impact, serif;
-  font-size: 0.9vw;
   font-weight: 800;
   text-transform: uppercase;
   border-radius: 15%;
@@ -135,6 +146,8 @@ button:hover {
   color: white;
   text-decoration: underline;
 }
+
+/* Cards */
 
 .cards-box {
   height: fit-content;
@@ -156,28 +169,27 @@ button:hover {
 }
 
 .cat-card {
-  box-shadow: rgba(119, 205, 246, 0.688) 1px 0 10px;
+  
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;  
   align-content: center;
   width: 35vw;
 }
 
 .cat-card img {
   margin: 1%;
-  height: 40vh;  
-  box-shadow: rgb(171, 228, 255) 1px 0 10px;
+  height: 55vh;  
   object-fit: contain;
 }
 
 .cat-card div {
-  margin: auto 3%;
-  width: 15vw;
+  margin: 0 auto 2% auto;
+  width: fit-content;
   display: flex;
   align-content: center;
+  box-shadow: rgba(119, 205, 246, 0.688) 1px 0 10px;
 }
 
 .cat-card p {
@@ -187,12 +199,13 @@ button:hover {
 }
 
 .p-smaller {
-  font-size: 0.6rem;
+  font-size: 90%;
   padding: 1%;
 }
 
 .next {
   margin: 2% auto 1% auto;
+  padding: 2%;
   justify-content: center;
   width: fit-content;
   text-decoration: underline;
@@ -203,7 +216,7 @@ button:hover {
   margin-top: 2%;
   padding: 2%;
   text-align: center;
-  font-size: 1.5vw;
+  font-size: 1.5rem;
   text-decoration: underline;
 }
 
@@ -222,7 +235,8 @@ button:hover {
 /* sticky footer */
 
 footer {
-  height: 1.7rem;
+  height: 2rem;
+  align-items: center;
   display: flex;
   position: sticky;
   flex-grow: 0;
@@ -250,12 +264,14 @@ footer {
 
 /* media queries for smaller screens */
 
-@media screen and (max-width: 942px) {
-
-  .background-container {
-    overflow-y: scroll;
-    overflow-x: hidden;
+@media screen and (max-width: 1097px) {
+  .btns-box {
+    display: block;
   }
+
+}
+
+@media screen and (max-width: 942px) {
 
   .logo, .footer-container, .content-box, .magic-box >p {
     margin-left: auto;
@@ -266,7 +282,7 @@ footer {
   .content-box {
     background-color: rgba(0, 0, 0, 0.618);
     text-shadow: rgb(123, 213, 255) 1px 0 10px;
-    width: 70vw;
+    max-width: 90vw;
     padding: 2rem;
     margin-top: 5vh;
     max-height: fit-content;
@@ -299,7 +315,16 @@ footer {
 
 }
 
-@media screen and (max-width: 590px) {
+@media screen and (max-width: 768px) {
+
+  .content-box {
+    width: 100vw;
+  }
+
+  .magic-box {
+    max-width: 100vw;
+  }
+
 
   .card-backs {
     max-width: 30%;
@@ -312,9 +337,6 @@ footer {
   .cat-card div {
     width: 100%;
   }
-  .cat-card p {
-    font-size: 0.6em;
-  }
 
 }
 
@@ -326,25 +348,22 @@ footer {
   }
 }
 
-@media screen and (max-width: 507px) {
-  .content-box {
-    font-size: 0.8em;  
-  }
-}
 
 @media screen and (max-width: 423px) {
-  .content-box {
-    font-size: 0.6em;  
-  }
+ 
   .cards-box img {
     height: 30vh;
   }
 
-  .cat-card img {
-    height: 30vh;
+  .cat-card {
+    box-shadow: none;
   }
 
-  .cat-card > p {
-    font-size: 0.6em;
+  .cat-card div {
+    box-shadow: rgb(123, 213, 255) 1px 0 10px;;
   }
+  .cat-card img {
+    height: 50vh;
+  }
+
 }
