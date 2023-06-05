@@ -1,17 +1,33 @@
 // Here to place onclick logo link to the first page at tidy up stage 
 
+// Imports the deck of cards
+import { deck } from "./deck.js";
 
 // Gets the inner HTML of the main section div's content 
-
 let contentBox = document.getElementById("content-box");
 
+// Creates 2 sets of cards to populate
+let cardSet1 = [];
+let cardSet2 = [];
+
+// Global variable to determine if option one was chosen
+let optionOne;
+
+// Creates three cards for user to choose
+let dayCard1;
+let dayCard2;
+let dayCard3;
+
 // Adds event listener to the page 1 button
-const button1 = document.getElementById("button1");
-button1.addEventListener("click", pageTwo);
+const getStarted = document.getElementById("get-started");
+getStarted.addEventListener("click", introduction);
 
-// On click function changing the content-box div's html for page 2 content
 
-function pageTwo(event) {
+/**
+ * On click function changing the content-box div's html for page 2 introduction content
+ */
+
+function introduction() {
   contentBox.innerHTML = `
     <div class="magic-box">
       <p>First of all let me introduce you to
@@ -25,156 +41,22 @@ function pageTwo(event) {
       <em>Card Of The Day</em>!</p>
       <p class="p-break">Remember- you can only choose it <b>once a day!</b></p>
     </div>
-    <div class="btn-start" id="button2">
-      <button type="button" aria-label="show-me-the-cards">Show me the cards!</button>
+    <div class="btn-start" id="show-cardsets">
+      <button type="button" aria-label="Show me the cards">Show me the cards!</button>
     </div>
   `;
 
-  const button2 = document.getElementById("button2");
-  button2.addEventListener("click", pageThree); 
+  const showCardSets = document.getElementById("show-cardsets");
+  showCardSets.addEventListener("click", chooseOneSet); 
 };
 
-// Creates the deck
-let deck = [];
 
-deck[0] = {
-  alt: "Buddha cat",
-  src: "assets/images/advice.jpg",
-  imageCaption: "Listen closely to your friends and colleagues today. You may get a very helpful advice!"
-};
-
-deck[1] = {
-  alt: "Angry cat poked by a twig",
-  src: "assets/images/angry.jpg",
-  imageCaption: "You may feel quite angry today. No matter what caused you feel this way don't let it ruin your day!"
-};
-
-deck[2] = {
-  alt: "Annoyed cat",
-  src: "assets/images/annoyed.jpg",
-  imageCaption: "Even a little things may get on your nerves today. Take a deep breaths and try not to overreact."
-};
-
-deck[3] = {
-  alt: "Scared cat hissing at nothing",
-  src: "assets/images/anxiety.jpg",
-  imageCaption: "Today your anxiety will try to take control over you. Don't let it win!"
-};
-
-deck[4] = {
-  alt: "Military cat sitting on a tank",
-  src: "assets/images/attack-chance.jpg",
-  imageCaption: "Stay focused on your surroundings. Some unexpected situations may arrise!"
-};
-
-deck[5] = {
-  alt: "Cat showing attitude",
-  src: "assets/images/attitude.jpg",
-  imageCaption: "Today you should try to take responsibility for your emotions. Remember, that your attitude is created by your thoughts, and you CAN choose your thoughts."
-};
-
-deck[6] = {
-  alt: "Cat angrily throwing the litter outide of his litterbox",
-  src: "assets/images/bad-day.jpg",
-  imageCaption: "Maybe today is not going to be the one of your best days, but remember that you don't need to spread the negative vibrations to others."
-};
-
-deck[7] = {
-  alt: "Cat dressed up as Mista from JoJo",
-  src: "assets/images/bizarre-adventure.jpg",
-  imageCaption: "A high chance of a bizarre adventure. For example you may encounter some very fancy looking people having shady connections with Italian mafia... Or not."
-};
-
-deck[8] = {
-  alt: "Cat looking like he drunk way too much of RedBulls",
-  src: "assets/images/caffeine.jpg",
-  imageCaption: "Try to control your caffeine intake today. Your heart is going to thank you in the future!"
-};
-
-deck[9] = {
-  alt: "Cat calmly sitting on broken cat tree",
-  src: "assets/images/calm.jpg",
-  imageCaption: "Even if things will go not exactly as planned today, you will find yourself calm and won't let anything to ruin your peace."
-};
-
-deck[10] = {
-  alt: "Men complaining about chest problems with cat sitting on top of him",
-  src: "assets/images/doctor.jpg",
-  imageCaption: "You should focus on your health today. Remember, that you own only one body and you need to take a good care of it!"
-};
-
-deck[11] = {
-  alt: "Curious cat",
-  src: "assets/images/drama-time.jpg",
-  imageCaption: "You may try to hide it, but you surely like some spicy gossips (who doesn't?). Today is the day when your hunger for drama may be fulfilled!"
-};
-
-deck[12] = {
-  alt: "VERY full of food, chunky cat",
-  src: "assets/images/foodie.jpg",
-  imageCaption: "Today you may expect some delicious food! No matter if it's either healthy snack, little salami or big dinner, it definitely will fill you up with happiness."
-};
-
-deck[13] = {
-  alt: "Cat with 'fragile' sticker on it's head",
-  src: "assets/images/fragile.jpg",
-  imageCaption: "You may feel very fragile- either physically, emotionally or mentally. Take it easy today, and don't be afraid to share your feelings with your close ones!"
-};
-
-deck[14] = {
-  alt: "Two happy, sleepy cats",
-  src: "assets/images/friend-hangout.jpg",
-  imageCaption: "Spend your time with your friends today. Even if it's going to be a short hangout it will brighten your day and you will have a great time together!"
-};
-
-deck[15] = {
-  alt: "Fully charged kitten",
-  src: "assets/images/fully-charged.jpg",
-  imageCaption: "You are going to feel full of energy. This day is going to be full of positive vibes!"
-};
-
-deck[16] = {
-  alt: "Tiny kitten on the big couch being the main guest",
-  src: "assets/images/guests-over.jpg",
-  imageCaption: "You are going to be busy with guests today. If you didn't expect any- now you know that you may be surprised by unanounced visit!"
-};
-
-deck[17] = {
-  alt: "Nervous kitten wearing suit on a job interview",
-  src: "assets/images/job-opportunity.jpg",
-  imageCaption: "New job opportunity may arise within your area of interest! Be ready to update your CV as it may be your chance for a pay raise!"
-};
-
-deck[18] = {
-  alt: "Very sleepy and cosy cat",
-  src: "assets/images/lazy-cosy.jpg",
-  imageCaption: "Today maybe you may not do much, but don't worry. Taking a day off from your tasks may help your brain to recover and become more productive tomorrow!"
-};
-
-deck[19] = {
-  alt: "Cat with heart-shaped marks on it's fur",
-  src: "assets/images/love-messenger.jpg",
-  imageCaption: "Love has many faces. Whichever of them you choose today, make sure to value and celebrate this feeling!"
-};
-
-deck[20] = {
-  alt: "Nice kitten wearing a nice hat looking nice and feeling nice",
-  src: "assets/images/nice.jpg",
-  imageCaption: "Having THAT outfit on surely feels good. Today you will get an extra confidence boost thanks to that."
-};
-
-// Prints the array of cards to the console
-
-for (x = 0; x < deck.length; x++) {
-  console.log(deck[x].src);
-};
 
 /**
  * Function changing the content-box div's html for page 3 content
  */
 
-
-function pageThree() {
+function chooseOneSet() {
 
   contentBox.innerHTML = `
     <div class="magic-box">
@@ -192,13 +74,10 @@ function pageThree() {
 
     setRandomize();
 
-    set1.addEventListener("click", option1);
-    set2.addEventListener("click", option2);
+    set1.addEventListener("click", chooseFirstSet);
+    set2.addEventListener("click", chooseSecondSet);
 };
 
-// Creates 2 sets of cards to populate
-let cardSet1 = [];
-let cardSet2 = [];
 
 /**
  * Function randomizing the content of 2 different sets of card arrays.
@@ -208,7 +87,7 @@ let cardSet2 = [];
 
 function setRandomize() {
 
-    // trying Fisher-Yates method
+    // Shuffling with Fisher-Yates method
     for (let i = deck.length -1; i > 0; i--) {
 
       let j = Math.floor(Math.random() * (i+1));
@@ -219,7 +98,7 @@ function setRandomize() {
       
     };
   
-  console.log(deck); // Reshuffled, works!
+  console.log(deck); // Reshuffled
   
   // Now finally split the deck 50/50
 
@@ -234,17 +113,15 @@ function setRandomize() {
 
 };
 
-// Global variable to determine if option one was chosen
-let optionOne;
 
 /**
  * Function returns the value 'true' of 1st card set after user clicks on left card set
  * for allowing to load page 4 with 1st set of cards in next function 
  */
 
-function option1() {
+function chooseFirstSet() {
   optionOne = true;
-  pageFour();
+  dealThreeCards();
 };
 
 /**
@@ -252,21 +129,17 @@ function option1() {
  * for allowing to load page 4 with 2nd set of cards in next function 
  */
   
-function option2() {
+function chooseSecondSet() {
   optionOne = false;
-  pageFour();
+  dealThreeCards();
 };
 
-let dayCard1;
-let dayCard2;
-let dayCard3;
-
 /**
- * On click "card shuffling" function that draws 3 random cards out of the arrays from the set
+ * On click function that draws 3 cards out of the array from the chosen set that have been previously shuffled through
  * and changes the inner html to page 4
  */ 
 
-function pageFour() {
+function dealThreeCards() {
 
   // Deals 3 cards of the chosen set
 
@@ -280,7 +153,7 @@ function pageFour() {
     dayCard3 = cardSet2[2];
   };
 
-  // Changes div's HTML to page 4
+  // Changes div's HTML to page 4 for displaying the 3 cards
 
   contentBox.innerHTML = `
     <div class="magic-box">
@@ -300,14 +173,14 @@ function pageFour() {
   const card3 = document.getElementById("3rd-card");
 
   // Adds event listeners for 3 cards
-  card1.addEventListener("click", reveal1);
-  card2.addEventListener("click", reveal2);
-  card3.addEventListener("click", reveal3);
+  card1.addEventListener("click", revealFirstCard);
+  card2.addEventListener("click", revealSecondCard);
+  card3.addEventListener("click", revealThirdCard);
 }
 
 // Reveals the Card Of The Day with it's description - in progress (base structure)
 
-function reveal1() {
+function revealFirstCard() {
 
   // Changes the div's html
   contentBox.innerHTML = `
@@ -320,7 +193,7 @@ function reveal1() {
     <div id="next" class="next"><p>-- NEXT --</p></div>
   `;
 
-  // Adds the Card Of The Day 1 to the div- in progress
+  // Adds the Card Of The Day 1 to the div
 
   let img1 = document.createElement("img");
   let catCard1 = document.getElementById("day-card1");
@@ -336,12 +209,12 @@ function reveal1() {
 
   console.log("revealing card 1");
 
-  // Adds event listener for NEXT div
+  // Adds event listener for NEXT div to go to the additional info page
   const nextButton = document.getElementById("next");
-  nextButton.addEventListener("click", pageFive);
+  nextButton.addEventListener("click", moreInformations);
 };
 
-function reveal2() {
+function revealSecondCard() {
 
   // Changes the div's html
   contentBox.innerHTML = `
@@ -354,7 +227,7 @@ function reveal2() {
     <div id="next" class="next"><p>-- NEXT --</p></div>
   `;
 
-  // Adds the Card Of The Day 2 to the div- in progress
+  // Adds the Card Of The Day 2 to the div
 
   let img2 = document.createElement("img");
   let catCard2 = document.getElementById("day-card2");
@@ -372,11 +245,11 @@ function reveal2() {
 
   // Adds event listener for NEXT div
   const nextButton = document.getElementById("next");
-  nextButton.addEventListener("click", pageFive);
+  nextButton.addEventListener("click", moreInformations);
 
 };
 
-function reveal3() {
+function revealThirdCard() {
 
   // Changes the div's html
   contentBox.innerHTML = `
@@ -389,7 +262,7 @@ function reveal3() {
     <div id="next" class="next"><p>-- NEXT --</p></div>
   `;
 
-  // Adds the Card Of The Day 3 to the div- in progress
+  // Adds the Card Of The Day 3 to the div
 
   let img3 = document.createElement("img");
   let catCard3 = document.getElementById("day-card3");
@@ -405,17 +278,17 @@ function reveal3() {
 
   console.log("revealing card 3");
 
-  // Adds event listener for NEXT div
+  // Adds event listener for NEXT div to go to the additional info page
   const nextButton = document.getElementById("next");
-  nextButton.addEventListener("click", pageFive);
+  nextButton.addEventListener("click", moreInformations);
 
 };
 
 /**
- *  Changes the inner html to page 5 and adds event listeners to buttons
+ *  Changes the inner html to page 5  that gives more info options and adds event listeners to buttons
  */
 
-function pageFive() {
+function moreInformations() {
 
   contentBox.innerHTML = `
     <div class="magic-box">
@@ -429,7 +302,7 @@ function pageFive() {
       <button type="button" aria-label="creator">That silly creator</button>
     </div>
 
-    <div class="btn-start" id="button-other">
+    <div class="btn-start" id="button-other-methods">
       <button type="button" aria-label="other divination methods">Other divination methods</button>
     </div>
     <div>
@@ -439,9 +312,9 @@ function pageFive() {
 
   // Adds event listeners to buttons
   const creator = document.getElementById("button-creator");
-  const otherMet = document.getElementById("button-other");
+  const otherMet = document.getElementById("button-other-methods");
   creator.addEventListener("click", creatorPg);
-  otherMet.addEventListener("click", otherMetPg);
+  otherMet.addEventListener("click", otherDivinationMethods);
 
 };
 
@@ -470,13 +343,13 @@ function creatorPg() {
           <p class="p-break p-smaller"><span class="em">5/06/2023:</span> Initial version of the website has been deployed to GitHub Pages.</p>
         </div>
       </div>
-      <div class="btn-start" id="button-back">
+      <div class="btn-start" id="go-back">
       <button type="button" aria-label="Go back">Go back</button>
     </div>     
   `;
 
-  const goBack = document.getElementById("button-back");
-  goBack.addEventListener("click", pageFive);
+  const goBack = document.getElementById("go-back");
+  goBack.addEventListener("click", moreInformations);
   
 
 };
@@ -485,7 +358,7 @@ function creatorPg() {
  * Function changing div's content to other forms of divination
  */
 
-function otherMetPg() {
+function otherDivinationMethods() {
 
   contentBox.innerHTML = `
     <div class="magic-box">
@@ -513,11 +386,33 @@ function otherMetPg() {
   `;
 
   const goBack = document.getElementById("button-back");
-  goBack.addEventListener("click", pageFive);
+  goBack.addEventListener("click", moreInformations);
 }
 
-// Creates an array of things to focus on
 
 // Function to randomize the areas of focus and push them in a div
+/**
+ * 
+ * 
+ 
+function onceADay() {
+
+  let date = new Date().toLocaleDateString();
+
+  if( localStorage.yourapp_date == date ) {
+  return false;
+   
+
+  localStorage.yourapp_date = date;
+  return true;
+}
+
+
 
 // Prevents drawing the card more than once a day
+  
+// Prevents drawing the card more than once a day
+
+    if( !hasOneDayPassed() ) return false;
+}
+*/
