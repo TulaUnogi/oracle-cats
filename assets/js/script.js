@@ -15,14 +15,14 @@ function pageTwo(event) {
   contentBox.innerHTML = `
     <div class="magic-box">
       <p>First of all let me introduce you to
-      how it works!<p>
+      how it works!</p>
       <p class="p-break">after clicking the button below two sets
       of random cards from the deck are going to be presented to you, but your
       card  of the day will still be uncovered.
       Let the spirits guide you to click the right set! After you choose the set the three
       random cards will appear in front of you.
       The one you choose is going to be your
-      <em>Card Of The Day</em>! 
+      <em>Card Of The Day</em>!</p>
       <p class="p-break">Remember- you can only choose it <b>once a day!</b></p>
     </div>
     <div class="btn-start" id="button2">
@@ -183,7 +183,7 @@ function pageThree() {
         <img src="assets/images/cards-set.png" class="card-backs"  id="2nd-set" alt="second set of cards">
       </div>
       <p class="p-break">The deck of cards has been shuffled. Here you can see two sets of cards that have been 
-      selected from the deck. One of them contains your <em>Card Of The Day</em>. Select the one that draws your attention.
+      selected from the deck. One of them contains your <em>Card Of The Day</em>. Select the one that draws your attention.</p>
     </div>
     `;
     
@@ -317,7 +317,7 @@ function reveal1() {
       <p class="p-break"> Here's your <em>Card Of The Day</em>! Don't forget to come back tomorrow!</p> 
       <p>If you would like to find out more about the other forms of divination or creator's notes, please click "NEXT"!</p>
     </div>
-    <div class="next">NEXT</div>
+    <div id="next">NEXT</div>
   `;
 
   // Adds the Card Of The Day 1 to the div- in progress
@@ -333,6 +333,10 @@ function reveal1() {
   catCard1.appendChild(description1);
 
   console.log("revealing card 1");
+
+  // Adds event listener for NEXT div
+  const nextButton = document.getElementById("next");
+  nextButton.addEventListener("click", pageFive);
 };
 
 function reveal2() {
@@ -345,7 +349,7 @@ function reveal2() {
       <p class="p-break"> Here's your <em>Card Of The Day</em>! Don't forget to come back tomorrow!</p> 
       <p>If you would like to find out more about the other forms of divination or creator's notes, please click "NEXT"!</p>
     </div>
-    <div class="next">NEXT</div>
+    <div id="next">NEXT</div>
   `;
 
   // Adds the Card Of The Day 2 to the div- in progress
@@ -361,6 +365,11 @@ function reveal2() {
   catCard2.appendChild(description2);
 
   console.log("revealing card 2");
+
+  // Adds event listener for NEXT div
+  const nextButton = document.getElementById("next");
+  nextButton.addEventListener("click", pageFive);
+
 };
 
 function reveal3() {
@@ -373,7 +382,7 @@ function reveal3() {
       <p class="p-break"> Here's your <em>Card Of The Day</em>! Don't forget to come back tomorrow!</p> 
       <p>If you would like to find out more about the other forms of divination or creator's notes, please click "NEXT"!</p>
     </div>
-    <div class="next">NEXT</div>
+    <div id="next">NEXT</div>
   `;
 
   // Adds the Card Of The Day 3 to the div- in progress
@@ -389,6 +398,41 @@ function reveal3() {
   catCard3.appendChild(description3);
 
   console.log("revealing card 3");
+
+  // Adds event listener for NEXT div
+  const nextButton = document.getElementById("next");
+  nextButton.addEventListener("click", pageFive);
+
+};
+
+/**
+ *  Changes the inner html to page 5 and adds event listeners to buttons
+ */
+
+function pageFive() {
+
+  contentBox.innerHTML = `
+    <div class="magic-box">
+      <p>Hungry for more informations? No problem! Just click one of the options below. Left option is going to 
+      show you informations about the creator and creator's notes, while right one is going to provide the links to the useful
+      resources for you to do some research about other methods of divination!</p>
+      <p class="p-break"><b><em>I would like to know more about:</em><b></p>
+      <div class="btn-start" id="button-creator">
+      <button type="button" aria-label="creator">That silly creator</button>
+    </div>
+    <div class="btn-start" id="button-other">
+      <button type="button" aria-label="other divination methods">Other divination methods</button>
+    </div>
+      <p class="p-break">Hope that you enjoyed your experience with Oracle Cats! Please remember to come back <b>tomorrow</b>!</p>
+    </div>  
+  `;
+
+  // Adds event listeners to buttons
+  const creator = document.getElementById("button-creator");
+  const otherMet = document.getElementById("button-other");
+  creator.addEventListener("click");
+  otherMet.addEventListener("click");
+
 };
 
 // Creates an array of things to focus on
@@ -397,11 +441,6 @@ function reveal3() {
 
 // Prevents drawing the card more than once a day
 
-// Adds event listener for "NEXT"
-
-// Changes the inner html to page 5
-
-// Event listeners for the 2 buttons leading to the informations about creator and other forms of divination
 
 // Displays the creator's page
 
