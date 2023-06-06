@@ -46,17 +46,15 @@ function introduction() {
     </div>
   `; 
   
-  // Checking if page has been fully loaded
-  window.addEventListener("DOMContentLoaded", (event) => {
   // Adds event listener for button
   let showCardSets = document.getElementById("show-cardsets");
   showCardSets.addEventListener("click", chooseOneSet); 
-  });
+  
   
   // Checking if the card has been drawn today
   onceADay();
 
-};
+}
 
 
 
@@ -84,7 +82,7 @@ function chooseOneSet() {
 
     set1.addEventListener("click", chooseFirstSet);
     set2.addEventListener("click", chooseSecondSet);
-};
+}
 
 
 /**
@@ -104,7 +102,7 @@ function setRandomize() {
       deck[i] = deck[j];
       deck[j] = k;
       
-    };
+    }
   
   console.log(deck); // Reshuffled
   
@@ -119,7 +117,7 @@ function setRandomize() {
   console.log(cardSet1, "set1");
   console.log(cardSet2, "set2");
 
-};
+}
 
 
 /**
@@ -130,7 +128,7 @@ function setRandomize() {
 function chooseFirstSet() {
   optionOne = true;
   dealThreeCards();
-};
+}
 
 /**
  * Function returns the value 'false' for 1st card set after user clicks on right card set
@@ -140,7 +138,7 @@ function chooseFirstSet() {
 function chooseSecondSet() {
   optionOne = false;
   dealThreeCards();
-};
+}
 
 /**
  * On click function that draws 3 cards out of the array from the chosen set that have been previously shuffled through
@@ -159,7 +157,7 @@ function dealThreeCards() {
     dayCard1 = cardSet2[0];
     dayCard2 = cardSet2[1];
     dayCard3 = cardSet2[2];
-  };
+  }
 
   // Changes div's HTML to page 4 for displaying the 3 cards
 
@@ -220,7 +218,7 @@ function revealFirstCard() {
   // Adds event listener for NEXT div to go to the additional info page
   const nextButton = document.getElementById("next");
   nextButton.addEventListener("click", moreInformations);
-};
+}
 
 function revealSecondCard() {
 
@@ -255,7 +253,7 @@ function revealSecondCard() {
   const nextButton = document.getElementById("next");
   nextButton.addEventListener("click", moreInformations);
 
-};
+}
 
 function revealThirdCard() {
 
@@ -290,7 +288,7 @@ function revealThirdCard() {
   const nextButton = document.getElementById("next");
   nextButton.addEventListener("click", moreInformations);
 
-};
+}
 
 /**
  *  Changes the inner html to page 5  that gives more info options and adds event listeners to buttons
@@ -325,7 +323,7 @@ function moreInformations() {
   creator.addEventListener("click", creatorPg);
   otherMet.addEventListener("click", otherDivinationMethods);
 
-};
+}
 
 /**
  * Function changing div's content to creator notes
@@ -361,7 +359,7 @@ function creatorPg() {
   goBack.addEventListener("click", moreInformations);
   
 
-};
+}
 
 /**
  * Function changing div's content to other forms of divination
@@ -396,6 +394,7 @@ function otherDivinationMethods() {
 
   const goBack = document.getElementById("button-back");
   goBack.addEventListener("click", moreInformations);
+
 }
 
 
@@ -416,7 +415,6 @@ function onceADay() {
   } else {
     localStorage.setItem("timeStampKey", timeStamp);
     console.log('No time stamp, setting time stamp');
-  };
+  }
    
-};
-
+}

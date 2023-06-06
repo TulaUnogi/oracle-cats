@@ -92,7 +92,30 @@ The idea behind it combines simple Oracle Cards inspired future- telling game, t
 
   - ## Testing and debugging:
 
-    - 
+    - The page has been tested on ideapadGAMING laptop, 22" inches computer screen and Samsung Galaxy S7. 
+    - Browsers used for testing: Chrome, Opera, Firefox, Microsoft Edge and Samsung Internet on mobile device.
+    - Website shows responsiveness and all the functions on a website are working as intended.
+    - Chrome DevTools have been used for active debugging throughout the whole process of writing the code.
+    - Chrome DevTools have been also used for testing and improving the responsiveness process.
+
+  - ## Validator Testing:
+    - HTML: No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fgithub.com%2FTulaUnogi%2Foracle-cats#textarea)
+
+    - CSS: no errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator)
+
+    - JavaScript: no errors were found when passing through the official [Jshint validator](https://jshint.com/), the following metrics were returned: 
+
+      1. There are 13 functions in this file.
+
+      2. Function with the largest signature take 0 arguments, while the median is 0.
+
+      3. Largest function has 15 statements in it, while the median is 6.
+
+      4. The most complex function has a cyclomatic complexity value of 2 while the median is 1.
+
+  - ## Unfixed bugs:
+
+    - Main content area's background may ocasionally overlap the footer area, but it does not stop the website functionality.
 
   - ## Future development plans:
 
@@ -101,6 +124,30 @@ The idea behind it combines simple Oracle Cards inspired future- telling game, t
     - Optional inverted background on smaller screens.
     - Expanded deck to the full capacity.
     - Improved layout.
+
+  - ## Credits:
+
+    - ### Content:
+
+     - Links used for presenting other methods of divination page found on [Google](https://www.google.com/):
+       1. https://www.astrologyzone.com/
+       2. https://medium.com/musings-with-meg/oracle-decks-what-they-are-and-how-to-use-them-c037251a7a84
+       3. https://www.yourtango.com/2018316703/how-to-read-cast-interpret-rune-casting-astrology-zodiac-horoscope
+       4. https://www.tarot.com/tarot
+     
+     - [Code Institute](https://codeinstitute.net/global/), [W3Schools](https://www.w3schools.com/) and [StackOverflow](https://stackoverflow.com/) have been used to find the informations about code.
+
+    - ### Media:
+
+     - All the cat memes used for creating the cards have been found on [Facebook Cat Memes group.](https://www.facebook.com/groups/923931037938226)
+     - Picture used for logo and favicon created by Netho Sphinx from Pixabay.
+     - Card's back image: "larkspur" by william morris for rawpixel.com on Freepik.
+     - Cat background image by Alem Coksa from Pixabay.
+     
+    - ### Personal:
+
+     - To my mentor Narender Singh: for all the time and support. Thank you!
+
 
 
 
