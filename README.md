@@ -148,6 +148,15 @@ The idea behind it combines simple Oracle Cards inspired future- telling game, t
 
      - To my mentor Narender Singh: for all the time and support. Thank you!
 
+- ## Deployment:   
+
+  - ### The site was deployed to GitHub pages. The steps to deploy are as follows: 
+
+    - In the GitHub repository, navigate to the Settings tab 
+    - From the source section drop-down menu, select the Main Branch
+    - Once the main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.  
+    - The site is live at: https://tulaunogi.github.io/oracle-cats/ 
+
 
 
 
