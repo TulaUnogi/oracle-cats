@@ -4,6 +4,7 @@ This website has been created for the recreational purposes as one of the portfo
 The idea behind it combines simple Oracle Cards inspired future- telling game, that is using cat memes as cards and is powered by JavaScript.
 
 
+
 - ## User Experience:
 
     - ### User Stories:
@@ -17,7 +18,7 @@ The idea behind it combines simple Oracle Cards inspired future- telling game, t
            - #### Returning Visitor Goals:
 
             1. As a Returning Visitor I want to be exposed to funny cat memes.
-            2. As a Returning Visitor I want to have opportunity to able to have the opportunity to pick an oracle Card Of The Day by myself.
+            2. As a Returning Visitor I want to have opportunity to pick an oracle Card Of The Day by myself.
             3. As a Returning Visitor I want to know that my Card Of The Day is special and as so it cannot be drawn more than once a day.
             4. As a Frequent Visitor I want to be able to enjoy using the website on a various screen sizes thanks to a responsive layout.
            
@@ -37,8 +38,8 @@ The idea behind it combines simple Oracle Cards inspired future- telling game, t
 
    - ### Main page:
         
-        1. Includes the headings, main content section and footer with copyrights information.
-        2. This is a base page for the whole website and it's main content is edited with help of javascript functions.
+        1. Includes the headings, main content section and footer with copyrights information
+        2. This is a base page for the whole website and it's main section's content is edited with help of javascript functions.
         3. After clicking the button the html content of the main section changes to the page 2.
             
    - ### Page 2:
@@ -50,7 +51,7 @@ The idea behind it combines simple Oracle Cards inspired future- telling game, t
    - ### Page 3:
 
         1. The text content inside the main section encourages the User to pick one of 2 sets of cards.
-        2. Each set includes different groups of cards.
+        2. Each set includes different groups of cards from the deck, that have been shuffled.
         3. After choosing the card set the content of the main section changes to the page 4.
 
    - ### Page 4:
@@ -63,8 +64,7 @@ The idea behind it combines simple Oracle Cards inspired future- telling game, t
 
         1. The text content inside the main section presents the User's Card Of The Day with it's short description.
         2. The additional advice on the special areas of focus is being generated underneath it.
-        3. After clicking NEXT on the bottom the User moves to the Page 6 that includes afterword with buttons leading to additional informations 
-        about creator and links to other forms of divinations. This is not a part of a divination process and it's optional for the user.
+        3. After clicking NEXT on the bottom the User moves to the Page 6 that includes afterword with buttons leading to additional informations about creator and links to other forms of divinations. This is not a part of a divination process and it's optional for the user.
 
   - ## Design:
 
@@ -89,5 +89,21 @@ The idea behind it combines simple Oracle Cards inspired future- telling game, t
     - [HTML5] (https://en.wikipedia.org/wiki/HTML5)
     - [CSS3] (https://en.wikipedia.org/wiki/CSS)
     - [JavaScript] (https://en.wikipedia.org/wiki/JavaScript)
+
+  - ## Testing and debugging:
+
+    - 
+
+  - ## Future development plans:
+
+    - Optional div under the card that would present randomised areas of user's focus and warnings (e.g. "Today you should focus
+      on: Family").
+    - Optional inverted background on smaller screens.
+    - Expanded deck to the full capacity.
+    - Improved layout.
+
+
+
+
 
 

@@ -1,4 +1,4 @@
-// Here to place onclick logo link to the first page at tidy up stage 
+// Here to place onclick logo link to the first page at tidy up stage <-- not needed once you only can draw once a day
 
 // Imports the deck of cards
 import { deck } from "./deck.js";
@@ -44,10 +44,18 @@ function introduction() {
     <div class="btn-start" id="show-cardsets">
       <button type="button" aria-label="Show me the cards">Show me the cards!</button>
     </div>
-  `;
-
-  const showCardSets = document.getElementById("show-cardsets");
+  `; 
+  
+  // Checking if page has been fully loaded
+  window.addEventListener("DOMContentLoaded", (event) => {
+  // Adds event listener for button
+  let showCardSets = document.getElementById("show-cardsets");
   showCardSets.addEventListener("click", chooseOneSet); 
+  });
+  
+  // Checking if the card has been drawn today
+  onceADay();
+
 };
 
 
@@ -292,6 +300,7 @@ function moreInformations() {
 
   contentBox.innerHTML = `
     <div class="magic-box">
+      <h2 class="inner-h2">You used your daily portion of Cat Divination.</h2>
       <p>Hungry for more informations? No problem! Just click one of the options below. Left option is going to 
       show you informations about the creator and creator's notes, while right one is going to provide the links to the useful
       resources for you to do some research about other methods of divination!</p>
@@ -390,29 +399,24 @@ function otherDivinationMethods() {
 }
 
 
-// Function to randomize the areas of focus and push them in a div
 /**
- * 
- * 
- 
+ * Function to prevent drawing the Card of the Day more than once a day
+*/
+
 function onceADay() {
 
-  let date = new Date().toLocaleDateString();
+  // Gets the current date
+  let timeStamp = new Date().toLocaleDateString();
 
-  if( localStorage.yourapp_date == date ) {
-  return false;
+  // Checks if it's the same day
+  if(localStorage.getItem("timeStampKey") === timeStamp) {
+    alert("Sorry, but you can only have one Card Of The Day! Please come back tomorrow! :)");
+    moreInformations();
+    console.log("Used the daily draw already. Exiting function."); 
+  } else {
+    localStorage.setItem("timeStampKey", timeStamp);
+    console.log('No time stamp, setting time stamp');
+  };
    
+};
 
-  localStorage.yourapp_date = date;
-  return true;
-}
-
-
-
-// Prevents drawing the card more than once a day
-  
-// Prevents drawing the card more than once a day
-
-    if( !hasOneDayPassed() ) return false;
-}
-*/
